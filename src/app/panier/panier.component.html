@@ -1,0 +1,21 @@
+<div class="container">
+    <h2>Panier</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Produit</th>
+          <th>Prix</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of cartItems">
+          <td>{{ product.name }}</td>
+          <td>{{ product.price | currency }}</td>
+          <td><button class="btn btn-danger" (click)="removeFromCart(product)">Retirer</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>Total : {{ getTotal() | currency }}</h3>
+  </div>
+  
